@@ -1,3 +1,5 @@
+var console = console || {log: function(){}};
+
 var QuestionAnswer = function(){
     var _step = -1;
     var _questions = [];
@@ -21,8 +23,7 @@ var QuestionAnswer = function(){
     };
     
     var is_answer_correct = function(){
-        console.log($('#answer').val(), _questions[step].answer);
-        return $('#answer').val() == _questions[step].answer;
+        return $('#answer').val().toLowerCase() == _questions[step].answer.toLowerCase();
     };
     
     var next_step = function(){

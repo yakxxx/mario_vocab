@@ -50,6 +50,14 @@ body {
     left: 476px;
 }
 
+.cloud_mario button {
+	margin-top: 30px;
+}
+
+.cloud_mario a{
+	color: white;
+}
+
 .finish {
 	height: 600px;
 	background: url('../img/finish.jpg'); 

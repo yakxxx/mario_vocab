@@ -6,11 +6,24 @@
         <link href="css/base.css" rel="stylesheet">
         <script src="http://code.jquery.com/jquery-latest.js"></script>
         <script src="bootstrap/js/bootstrap.min.js"></script>
-        <script src="js/qa.js"></script>
+        <script src="js/jqtype.js"></script>
+        <script> 
+            $(document).ready(function(){
+                $('#cloud_dragon p').typewrite();
+            });
+        </script>
     </head>
     
     <body>
     <div class="container" id="main_container">
+        <div class="span12 scene">
+            <div class="cloud_mario">
+                <a href="play.html"><button class="btn btn-success">Go!</button></a>
+            </div>
+             <div id="cloud_dragon">
+                 <p>If You want to save Your princess You must identify 13 words. Are You ready?</p>
+             </div>
+        </div>
     </div>
 </body>
 </html>
