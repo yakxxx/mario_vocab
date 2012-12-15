@@ -32,14 +32,16 @@ var QuestionAnswer = function(){
         if(step >=_questions.length){
             window.location.href='finish.html';
         }else{
-            render_question(_questions[step].question);
+            render_question(_questions[step].question, true);
         }
     };
     
     
-    var render_question = function(question){
+    var render_question = function(question, type){
         $('#cloud_dragon').html(question);
-        $('#cloud_dragon').typewrite();
+        if(type){
+            $('#cloud_dragon').typewrite();
+        }
     };
     
     var good_answer = function(){
