@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="pl-PL" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://ogp.me/ns#" >
+    <head>
+        <meta charset="utf8" />
+        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link href="css/base.css" rel="stylesheet">
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <script src="bootstrap/js/bootstrap.min.js"></script>
+        <script src="js/jqtype.js"></script>
+        <script src="js/qa.js"></script>
+        <script>
+            $(document).ready(function(){
+                var qa = QuestionAnswer();
+                qa.init([{
+                    question: 'Czym sie rozni wrobelek?',
+                    answer: 'chujem'
+                },
+                {
+                    question: 'Ile lat ma Ewa?',
+                    answer: '23'
+                    
+                }]);
+            });
+        
+        </script>
+    </head>
+    
+    <body>
+    <div class="container" id="main_container">
+        <div class="span12 scene">
+            <div class="cloud_mario">
+                <form>
+                    <input id="answer" type="text" class="input-medium">
+                    <input class="btn btn-success go" type="submit" value="Go!">
+                </form>
+            </div>
+            <div id="cloud_dragon">
+                asdasada asd erg sd
+            </div>
+            
+        </div>
+    </div>
+    
+    </body>
+    
+</html>
