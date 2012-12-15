@@ -3,20 +3,23 @@ var console = console || {log: function(){}};
 var QuestionAnswer = function(){
     var _step = -1;
     var _questions = [];
+    _block_ui = false;
     
     var QA = {
         init: function(questions){
             _questions = questions;
             step = -1;
+            _block_ui = false;
             $('form').submit(function(event){
-               event.stopPropagation();
-               if(is_answer_correct()){
-                   good_answer();
-               }else{
-                   bad_answer();
-               }
-               
-               return false; 
+                if(!_block){
+                    if(is_answer_correct()){
+                        good_answer();
+                    }else{
+                        bad_answer();
+                    }
+                }
+                event.stopPropagation();
+                return false;
             });
             next_step();
         }
@@ -28,12 +31,14 @@ var QuestionAnswer = function(){
     
     var next_step = function(){
         step++;
+        unblock_ui();
         $('#answer').val('');
         if(step >=_questions.length){
             window.location.href='finish.html';
         }else{
             render_question(_questions[step].question, true);
         }
+        
     };
     
     
@@ -46,6 +51,7 @@ var QuestionAnswer = function(){
     
     var good_answer = function(){
         render_response('Good!');
+        block_ui();
         setTimeout(function(){
             next_step();
         },3000);
@@ -61,6 +67,14 @@ var QuestionAnswer = function(){
     var render_response = function(response){
         $('#cloud_dragon').html(response);
     };
+    
+    var block_ui = function(){
+        _block = true;
+    };
+    
+    var unblock_ui = function(){
+        _block = false;
+    }
     
     return QA;
     
